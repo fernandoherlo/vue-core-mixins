@@ -4,9 +4,7 @@
  */
 // Mixins
 import Events from '@/mixins/events'
-import { EventBus } from '@/mixins/event-bus';
 
 export {
-  Events,
-  EventBus
+  Events
 }

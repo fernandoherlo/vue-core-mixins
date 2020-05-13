@@ -1,13 +1,13 @@
 (function webpackUniversalModuleDefinition(root, factory) {
 	if(typeof exports === 'object' && typeof module === 'object')
-		module.exports = factory(require("vue"));
+		module.exports = factory();
 	else if(typeof define === 'function' && define.amd)
 		define([], factory);
 	else if(typeof exports === 'object')
-		exports["vue-core-mixins"] = factory(require("vue"));
+		exports["vue-core-mixins"] = factory();
 	else
-		root["vue-core-mixins"] = factory(root["Vue"]);
-})((typeof self !== 'undefined' ? self : this), function(__WEBPACK_EXTERNAL_MODULE__8bbf__) {
+		root["vue-core-mixins"] = factory();
+})((typeof self !== 'undefined' ? self : this), function() {
 return /******/ (function(modules) { // webpackBootstrap
 /******/ 	// The module cache
 /******/ 	var installedModules = {};
@@ -96,13 +96,6 @@ return /******/ (function(modules) { // webpackBootstrap
 /************************************************************************/
 /******/ ({
 
-/***/ "8bbf":
-/***/ (function(module, exports) {
-
-module.exports = __WEBPACK_EXTERNAL_MODULE__8bbf__;
-
-/***/ }),
-
 /***/ "f6fd":
 /***/ (function(module, exports) {
 
@@ -155,7 +148,6 @@ __webpack_require__.r(__webpack_exports__);
 
 // EXPORTS
 __webpack_require__.d(__webpack_exports__, "Events", function() { return /* reexport */ events; });
-__webpack_require__.d(__webpack_exports__, "EventBus", function() { return /* reexport */ EventBus; });
 
 // CONCATENATED MODULE: ./node_modules/@vue/cli-service/lib/commands/build/setPublicPath.js
 // This file is imported into lib/wc client bundles.
@@ -174,43 +166,35 @@ if (typeof window !== 'undefined') {
 // Indicate to webpack that this file can be concatenated
 /* harmony default export */ var setPublicPath = (null);
 
-// EXTERNAL MODULE: external {"commonjs":"vue","commonjs2":"vue","root":"Vue"}
-var external_commonjs_vue_commonjs2_vue_root_Vue_ = __webpack_require__("8bbf");
-var external_commonjs_vue_commonjs2_vue_root_Vue_default = /*#__PURE__*/__webpack_require__.n(external_commonjs_vue_commonjs2_vue_root_Vue_);
-
-// CONCATENATED MODULE: ./src/mixins/event-bus.js
-
-var EventBus = new external_commonjs_vue_commonjs2_vue_root_Vue_default.a();
 // CONCATENATED MODULE: ./src/mixins/events.js
- // EVENTS
-
+// EVENTS
 /* harmony default export */ var events = ({
   created: function created() {
     var _this = this;
 
     // apiGet
-    EventBus.$on('apiGet', function (url, callback) {
+    this.$EventBus.$on('apiGet', function (url, callback) {
       // Degub
       _this.$log.debug('EVENTS -> apiGet', url);
 
       _this.$api.get(url, callback);
     }); // apiUpdate
 
-    EventBus.$on('apiUpdate', function (url, item, callback) {
+    this.$EventBus.$on('apiUpdate', function (url, item, callback) {
       // Degub
       _this.$log.debug('EVENTS -> apiUpdate', url);
 
       _this.$api.update(url, item, callback);
     }); // apiSave
 
-    EventBus.$on('apiSave', function (url, item, callback) {
+    this.$EventBus.$on('apiSave', function (url, item, callback) {
       // Degub
       _this.$log.debug('EVENTS -> apiSave', url);
 
       _this.$api.save(url, item, callback);
     }); // apiDelete
 
-    EventBus.$on('apiDelete', function (url, item, callback, wait, id_parent) {
+    this.$EventBus.$on('apiDelete', function (url, item, callback, wait, id_parent) {
       // Degub
       _this.$log.debug('EVENTS -> apiDelete', url);
 
@@ -224,7 +208,6 @@ var EventBus = new external_commonjs_vue_commonjs2_vue_root_Vue_default.a();
  * @description Library for Vue.js 2.0
  */
 // Mixins
-
 
 
 // CONCATENATED MODULE: ./node_modules/@vue/cli-service/lib/commands/build/entry-lib-no-default.js
