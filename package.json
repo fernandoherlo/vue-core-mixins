@@ -1,0 +1,39 @@
+{
+  "name": "@fernandoherlo/vue-core-mixins",
+  "version": "0.2.0",
+  "author": "Fernando Herlo",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/fernandoherlo/vue-core-mixins.git"
+  },
+  "bugs": {
+    "url": "https://github.com/fernandoherlo/vue-core-mixins/issues"
+  },
+  "homepage": "https://github.com/fernandoherlo/vue-core-mixins#readme",
+  "license": "MIT",
+  "scripts": {
+    "build": "vue-cli-service build --target lib --name vue-core-mixins src/build.js",
+    "lint": "vue-cli-service lint",
+    "repo_a": "git add .",
+    "repo_u": "git add -u",
+    "repo_c": "git commit -m 'Bugs'",
+    "repo": "npm run repo_a && npm run repo_u && npm run repo_c",
+    "ver": "npm version patch",
+    "push": "git push origin master ",
+    "prod": "npm run build && npm run repo && npm run ver && npm run push && npm publish --access=public"
+  },
+  "main": "./dist/vue-core-mixins.common.js",
+  "dependencies": {
+    "eslint": "^6.8.0",
+    "eslint-plugin-vue": "^6.2.2",
+    "vue": "^2.6.11"
+  },
+  "devDependencies": {
+    "@vue/cli-plugin-babel": "^4.2.3",
+    "@vue/cli-plugin-eslint": "^4.2.3",
+    "@vue/cli-service": "^4.2.3",
+    "@vue/devtools": "^5.3.3",
+    "babel-eslint": "^10.1.0",
+    "vue-template-compiler": "^2.6.11"
+  }
+}
