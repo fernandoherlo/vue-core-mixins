@@ -174,42 +174,6 @@ if (typeof window !== 'undefined') {
 // Indicate to webpack that this file can be concatenated
 /* harmony default export */ var setPublicPath = (null);
 
-// CONCATENATED MODULE: ./src/mixins/events.js
-// EVENTS
-/* harmony default export */ var events = ({
-  created: function created() {
-    var _this = this;
-
-    // apiGet
-    this.$EventBus.$on('apiGet', function (url, callback) {
-      // Degub
-      _this.$log.debug('EVENTS -> apiGet', url);
-
-      _this.$api.get(url, callback);
-    }); // apiUpdate
-
-    this.$EventBus.$on('apiUpdate', function (url, item, callback) {
-      // Degub
-      _this.$log.debug('EVENTS -> apiUpdate', url);
-
-      _this.$api.update(url, item, callback);
-    }); // apiSave
-
-    this.$EventBus.$on('apiSave', function (url, item, callback) {
-      // Degub
-      _this.$log.debug('EVENTS -> apiSave', url);
-
-      _this.$api.save(url, item, callback);
-    }); // apiDelete
-
-    this.$EventBus.$on('apiDelete', function (url, item, callback, wait, id_parent) {
-      // Degub
-      _this.$log.debug('EVENTS -> apiDelete', url);
-
-      _this.$api.delete(url, item, callback, wait, id_parent);
-    });
-  }
-});
 // EXTERNAL MODULE: external {"commonjs":"vue","commonjs2":"vue","root":"Vue"}
 var external_commonjs_vue_commonjs2_vue_root_Vue_ = __webpack_require__("8bbf");
 var external_commonjs_vue_commonjs2_vue_root_Vue_default = /*#__PURE__*/__webpack_require__.n(external_commonjs_vue_commonjs2_vue_root_Vue_);
@@ -217,6 +181,43 @@ var external_commonjs_vue_commonjs2_vue_root_Vue_default = /*#__PURE__*/__webpac
 // CONCATENATED MODULE: ./src/mixins/event-bus.js
 
 var EventBus = new external_commonjs_vue_commonjs2_vue_root_Vue_default.a();
+// CONCATENATED MODULE: ./src/mixins/events.js
+ // EVENTS
+
+/* harmony default export */ var events = ({
+  created: function created() {
+    var _this = this;
+
+    // apiGet
+    EventBus.$on('apiGet', function (url, callback) {
+      // Degub
+      _this.$log.debug('EVENTS -> apiGet', url);
+
+      _this.$api.get(url, callback);
+    }); // apiUpdate
+
+    EventBus.$on('apiUpdate', function (url, item, callback) {
+      // Degub
+      _this.$log.debug('EVENTS -> apiUpdate', url);
+
+      _this.$api.update(url, item, callback);
+    }); // apiSave
+
+    EventBus.$on('apiSave', function (url, item, callback) {
+      // Degub
+      _this.$log.debug('EVENTS -> apiSave', url);
+
+      _this.$api.save(url, item, callback);
+    }); // apiDelete
+
+    EventBus.$on('apiDelete', function (url, item, callback, wait, id_parent) {
+      // Degub
+      _this.$log.debug('EVENTS -> apiDelete', url);
+
+      _this.$api.delete(url, item, callback, wait, id_parent);
+    });
+  }
+});
 // CONCATENATED MODULE: ./src/build.js
 /**
  * @name VueJS VueCore Mixins (vue-core-mixins)
