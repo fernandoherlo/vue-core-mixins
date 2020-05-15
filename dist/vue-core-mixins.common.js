@@ -163,7 +163,6 @@ if (typeof window !== 'undefined') {
   data: function data() {
     return {
       // Hilitor
-      inputSearch: null,
       myHilitor: null
     };
   },
@@ -174,11 +173,10 @@ if (typeof window !== 'undefined') {
     this.$EventBus.$on('search-vgt', function ()
     /*searchTerm*/
     {
-      if (_this.inputSearch == null) {
+      if (window.inputSearch == null) {
         // Event empty input
-        _this.inputSearch = document.querySelector('.vgt-inner-wrap > .vgt-global-search > .vgt-global-search__input input');
-
-        _this.inputSearch.addEventListener('input', function (event) {
+        window.inputSearch = document.querySelector('.vgt-inner-wrap > .vgt-global-search > .vgt-global-search__input input');
+        window.inputSearch.addEventListener('input', function (event) {
           _this.$log.debug('EVENTS -> inputSearch');
 
           setTimeout(function () {

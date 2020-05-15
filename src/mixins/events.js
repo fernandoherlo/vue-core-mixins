@@ -3,7 +3,6 @@ export default {
   data () {
     return {
       // Hilitor
-      inputSearch: null,
       myHilitor: null,
     }
   },
@@ -12,10 +11,10 @@ export default {
     // Search highlight
     this.$EventBus.$on('search-vgt', (/*searchTerm*/) => {
 
-      if (this.inputSearch == null) {
+      if (window.inputSearch == null) {
         // Event empty input
-        this.inputSearch = document.querySelector('.vgt-inner-wrap > .vgt-global-search > .vgt-global-search__input input')
-        this.inputSearch.addEventListener('input', (event) => {
+        window.inputSearch = document.querySelector('.vgt-inner-wrap > .vgt-global-search > .vgt-global-search__input input')
+        window.inputSearch.addEventListener('input', (event) => {
       
           this.$log.debug('EVENTS -> inputSearch')
 
