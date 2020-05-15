@@ -160,10 +160,35 @@ if (typeof window !== 'undefined') {
 // CONCATENATED MODULE: ./src/mixins/events.js
 // EVENTS
 /* harmony default export */ var events = ({
+  data: function data() {
+    return {
+      // Hilitor
+      inputSearch: null,
+      myHilitor: null
+    };
+  },
   created: function created() {
     var _this = this;
 
-    // apiGet
+    // Search highlight
+    this.$EventBus.$on('search-vgt', function ()
+    /*searchTerm*/
+    {
+      if (_this.inputSearch == null) {
+        // Event empty input
+        _this.inputSearch = document.querySelector('.vgt-inner-wrap > .vgt-global-search > .vgt-global-search__input input');
+
+        _this.inputSearch.addEventListener('input', function (event) {
+          // console.log(event.target.value)
+          setTimeout(function () {
+            if (event.target.value == '') {
+              _this.myHilitor.remove();
+            }
+          }, 50);
+        });
+      }
+    }); // apiGet
+
     this.$EventBus.$on('apiGet', function (url, callback) {
       // Degub
       _this.$log.debug('EVENTS -> apiGet', url);

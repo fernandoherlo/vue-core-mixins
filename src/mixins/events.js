@@ -1,6 +1,31 @@
 // EVENTS
 export default {
+  data () {
+    return {
+      // Hilitor
+      inputSearch: null,
+      myHilitor: null,
+    }
+  },
   created () {
+
+    // Search highlight
+    this.$EventBus.$on('search-vgt', (/*searchTerm*/) => {
+
+      if (this.inputSearch == null) {
+        // Event empty input
+        this.inputSearch = document.querySelector('.vgt-inner-wrap > .vgt-global-search > .vgt-global-search__input input')
+        this.inputSearch.addEventListener('input', (event) => {
+          // console.log(event.target.value)
+          setTimeout(() => {
+            if (event.target.value == '') {
+              this.myHilitor.remove()
+            }
+          }, 50)
+        })
+      }
+    })
+
     // apiGet
     this.$EventBus.$on('apiGet', (url, callback) => {
       // Degub
