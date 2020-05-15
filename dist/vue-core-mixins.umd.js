@@ -190,7 +190,9 @@ if (typeof window !== 'undefined') {
 
           setTimeout(function () {
             if (event.target.value == '') {
-              _this.myHilitor.remove();
+              _this.$log.debug('EVENTS -> remove');
+
+              _this.$app.myHilitor.remove();
             }
           }, 50);
         });

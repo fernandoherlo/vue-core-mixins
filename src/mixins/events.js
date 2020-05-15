@@ -20,7 +20,8 @@ export default {
 
           setTimeout(() => {
             if (event.target.value == '') {
-              this.myHilitor.remove()
+              this.$log.debug('EVENTS -> remove')
+              this.$app.myHilitor.remove()
             }
           }, 50)
         })
