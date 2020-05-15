@@ -16,7 +16,9 @@ export default {
         // Event empty input
         this.inputSearch = document.querySelector('.vgt-inner-wrap > .vgt-global-search > .vgt-global-search__input input')
         this.inputSearch.addEventListener('input', (event) => {
-          // console.log(event.target.value)
+      
+          this.$log.debug('EVENTS -> inputSearch')
+
           setTimeout(() => {
             if (event.target.value == '') {
               this.myHilitor.remove()

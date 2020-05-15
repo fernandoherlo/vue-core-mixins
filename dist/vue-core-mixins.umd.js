@@ -188,7 +188,8 @@ if (typeof window !== 'undefined') {
         _this.inputSearch = document.querySelector('.vgt-inner-wrap > .vgt-global-search > .vgt-global-search__input input');
 
         _this.inputSearch.addEventListener('input', function (event) {
-          // console.log(event.target.value)
+          _this.$log.debug('EVENTS -> inputSearch');
+
           setTimeout(function () {
             if (event.target.value == '') {
               _this.myHilitor.remove();
