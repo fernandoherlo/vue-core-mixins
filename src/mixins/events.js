@@ -49,6 +49,13 @@ export default {
       this.$api.save(url, item, callback)
     })
     
+    // apiUpload
+    this.$EventBus.$on('apiUpload', (url, item, callback) => {
+      // Degub
+      this.$log.debug('EVENTS -> apiUpload', url)
+      this.$api.upload(url, item, callback)
+    })
+    
     // apiDelete
     this.$EventBus.$on('apiDelete', (url, item, callback, wait, id_parent) => {
       // Degub
