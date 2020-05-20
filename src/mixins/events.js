@@ -57,10 +57,10 @@ export default {
     })
     
     // apiDownload
-    this.$EventBus.$on('apiDownload', (url) => {
+    this.$EventBus.$on('apiDownload', (url, item) => {
       // Degub
       this.$log.debug('EVENTS -> apiDownload', url)
-      this.$api.download(url)
+      this.$api.download(url, item)
     })
     
     // apiDelete

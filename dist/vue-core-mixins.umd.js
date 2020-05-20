@@ -227,11 +227,11 @@ if (typeof window !== 'undefined') {
       _this.$api.upload(url, item, callback);
     }); // apiDownload
 
-    this.$EventBus.$on('apiDownload', function (url) {
+    this.$EventBus.$on('apiDownload', function (url, item) {
       // Degub
       _this.$log.debug('EVENTS -> apiDownload', url);
 
-      _this.$api.download(url);
+      _this.$api.download(url, item);
     }); // apiDelete
 
     this.$EventBus.$on('apiDelete', function (url, item, callback, wait, id_parent) {
