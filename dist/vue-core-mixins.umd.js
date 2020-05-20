@@ -225,6 +225,13 @@ if (typeof window !== 'undefined') {
       _this.$log.debug('EVENTS -> apiUpload', url);
 
       _this.$api.upload(url, item, callback);
+    }); // apiDownload
+
+    this.$EventBus.$on('apiDownload', function (url) {
+      // Degub
+      _this.$log.debug('EVENTS -> apiDownload', url);
+
+      _this.$api.download(url);
     }); // apiDelete
 
     this.$EventBus.$on('apiDelete', function (url, item, callback, wait, id_parent) {

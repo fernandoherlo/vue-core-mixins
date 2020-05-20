@@ -56,6 +56,13 @@ export default {
       this.$api.upload(url, item, callback)
     })
     
+    // apiDownload
+    this.$EventBus.$on('apiDownload', (url) => {
+      // Degub
+      this.$log.debug('EVENTS -> apiDownload', url)
+      this.$api.download(url)
+    })
+    
     // apiDelete
     this.$EventBus.$on('apiDelete', (url, item, callback, wait, id_parent) => {
       // Degub
