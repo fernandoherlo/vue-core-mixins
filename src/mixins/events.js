@@ -49,6 +49,13 @@ export default {
       this.$api.save(url, item, callback)
     })
     
+    // apiOrder
+    this.$EventBus.$on('apiOrder', (url, item, callback) => {
+      // Degub
+      this.$log.debug('EVENTS -> apiOrder', url)
+      this.$api.order(url, item, callback)
+    })
+    
     // apiUpload
     this.$EventBus.$on('apiUpload', (url, item, callback) => {
       // Degub

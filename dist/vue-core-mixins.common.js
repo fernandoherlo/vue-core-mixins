@@ -209,6 +209,13 @@ if (typeof window !== 'undefined') {
       _this.$log.debug('EVENTS -> apiSave', url);
 
       _this.$api.save(url, item, callback);
+    }); // apiOrder
+
+    this.$EventBus.$on('apiOrder', function (url, item, callback) {
+      // Degub
+      _this.$log.debug('EVENTS -> apiOrder', url);
+
+      _this.$api.order(url, item, callback);
     }); // apiUpload
 
     this.$EventBus.$on('apiUpload', function (url, item, callback) {
