@@ -31,7 +31,7 @@
   "devDependencies": {
     "@vue/cli-plugin-babel": "^4.2.3",
     "@vue/cli-plugin-eslint": "^4.2.3",
-    "@vue/cli-service": "^4.2.3",
+    "@vue/cli-service": "^5.0.8",
     "@vue/devtools": "^5.3.3",
     "babel-eslint": "^10.1.0",
     "vue-template-compiler": "^2.6.11"
